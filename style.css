@@ -7,16 +7,39 @@
 body {
   font-family: Helvetica, sans-serif;
 
-  h1 { font-size: 3.75em; }
-  h2 { font-size: 3em; }
-  h3 { font-size: 2.25em; }
-  h4 { font-size: 2em; }
-  h5 { font-size: 1.75em; }
-  h6 { font-size: 1.5em; }
+  h1 {
+    font-size: 3.75em;
+  }
 
-  h1, h2, h3, h4, h5, h6 {
+  h2 {
+    font-size: 3em;
+  }
+
+  h3 {
+    font-size: 2.25em;
+  }
+
+  h4 {
+    font-size: 2em;
+  }
+
+  h5 {
+    font-size: 1.75em;
+  }
+
+  h6 {
+    font-size: 1.5em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: darkslategray;
   }
+
   p {
     color: slategray;
     font-size: 18px;
@@ -35,15 +58,18 @@ header {
   .logo {
     display: flex;
     align-items: center;
+
     img {
       height: 32px;
     }
+
     a {
       text-decoration: none;
       font-size: 24px;
       font-weight: 600;
       color: darkslategray;
       text-transform: uppercase;
+
       span {
         font-weight: 500;
         color: slategray;
@@ -51,19 +77,105 @@ header {
     }
   }
 
-  nav ul {
+  .nav-desktop ul {
     display: flex;
     list-style: none;
+
     li {
       margin-right: 16px;
+
       a {
         text-decoration: none;
         font-size: 18px;
         color: darkslategray;
       }
     }
+
     li:last-child {
       margin-right: 0;
+    }
+  }
+  .nav-mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0;
+    .logo { display: none; }
+    .nav-desktop { display: none; }
+    .nav-mobile {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      ul {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+      }
+    }
+  }
+}
+
+.hero {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: center;
+  background-color: lightgray;
+
+  .hero-banner img {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .hero-info {
+    padding: 0 24px;
+    * {
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-weight: 700;
+    }
+    p {
+      font-size: 1.75rem;
+      color: darkslategray;
+      font-weight: 600;
+    }
+    button {
+      padding: 8px 29%;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      background-color: darkslategray;
+      a {
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    .hero-banner img {
+      padding: 0;
+    }
+    .hero-info {
+      padding: 32px 16px;
+      * {
+        margin-bottom: 0;
+      }
+      h1 {
+        margin-bottom: 32px;
+      }
+      p {
+        margin-bottom: 24px;
+      }
+      button {
+        padding: 8px 0;
+        width: 100%;
+      }
     }
   }
 }
