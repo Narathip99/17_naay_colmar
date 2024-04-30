@@ -94,6 +94,9 @@ header {
     li:last-child {
       margin-right: 0;
     }
+    li a:hover {
+      color: black;
+    }
   }
 
   .nav-mobile {
@@ -173,10 +176,14 @@ header {
         color: white;
       }
     }
+    button:hover {
+      background-color: rgb(38, 63, 63);
+      transition: all 0.5s ease-in-out;
+    }
   }
 
   @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
 
     .hero-banner img {
       padding: 0;
@@ -382,6 +389,15 @@ header {
     }
     .grid-item:hover {
       cursor: pointer;
+      transition: .5s ease-in-out;
+      
+      figure {
+        overflow: hidden;
+        img {
+          transform: scale(1.1);
+          transition: .5s ease-in-out;
+        }
+      }
     }
   }
 
